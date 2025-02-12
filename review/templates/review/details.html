@@ -3,7 +3,8 @@
 {% block title %}Thank you!{% endblock %} 
 {% block content %}
 
-<h1>Thank u ;)</h1>
-<h2>{{ message }}</h2>
-<a href="{% url 'reviewList' %}">lista de views</a>
+
+<h1>{{ element.user_name }}</h1>
+<h2>{{ element.rating }}</h2>
+<h3>{{ element.review_text }}</h3>
 {% endblock %}

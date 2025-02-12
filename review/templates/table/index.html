@@ -1,0 +1,18 @@
+{% extends "table/base.html" %}
+{% block title %}
+    your form for table
+{% endblock %}
+{% block content%}
+        <form action="/student" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+              <div class="form-control {% if field.errors %}errors{% endif %}">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+              </div>
+            {% endfor %}
+            <button type="submit">Send</button>
+        </form>
+
+{% endblock %}

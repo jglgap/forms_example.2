@@ -1,0 +1,21 @@
+{% extends "table/base.html" %}
+{% load static %}
+{% block title %} your table {% endblock %}
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Student degree</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <td><a href="{% url 'update' student.pk %}">{{ student.name }}</a></td>
+                    <td>{{ student.degree }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

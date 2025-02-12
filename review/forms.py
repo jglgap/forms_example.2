@@ -1,5 +1,5 @@
 from django import forms
-from .models import Review
+from .models import Review, Student
 # class ReviewForm(forms.Form):
 #     user_name = forms.CharField(label="Your name",max_length=100,error_messages={
 #         "required": "your name musnt`t be empty",
@@ -22,5 +22,25 @@ class ReviewForm(forms.ModelForm):
             "user_name":{
                 "required" : "your name is required",
                 "max_lenght" : "your name must be shorter"
+            }
+        }
+
+
+class TableForm(forms.ModelForm):
+    class Meta:
+        model = Student
+        fields = "__all__"
+        labels = {
+            "name" : "Student name",
+            "degree" : "Degree"
+        }
+        error_messages = {
+            "name":{
+                 "required" : "your name is required",
+                "max_lenght" : "your name must be shorter"
+            },
+            "degree":{
+                "required" : "your degree is required",
+                "max_lenght" : "your degree must be shorter"
             }
         }
