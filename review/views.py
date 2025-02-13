@@ -124,3 +124,9 @@ class UpdateStudent(UpdateView):
     form_class = TableForm
     template_name= "table/index.html"
     success_url = "/table/"
+
+class DeleteStudent(DeleteView):
+    model = Student
+    form_class = TableForm
+    template_name = "table/confirm_delete.html"
+    success_url = "/table/"

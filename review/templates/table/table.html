@@ -12,7 +12,9 @@
         <tbody>
             {% for student in students %}
                 <tr>
-                    <td><a href="{% url 'update' student.pk %}">{{ student.name }}</a></td>
+                    <td><a href="{% url 'update' student.pk %}">{{ student.name }}</a>
+                        <a href="{% url 'delete' student.pk %}">Delete</a></td>
+                    
                     <td>{{ student.degree }}</td>
                 </tr>
             {% endfor %}
